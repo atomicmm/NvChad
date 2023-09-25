@@ -1,4 +1,4 @@
--- Just an example, supposed to be placed in /lua/custom/
+-- 覆盖 default_config.lua 中的值
 
 local M = {}
 
