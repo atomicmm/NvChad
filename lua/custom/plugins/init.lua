@@ -1,5 +1,5 @@
 local M = {
-  -- flash.nvim
+  -- 快捷移动
   {
     "folke/flash.nvim",
     event = "VeryLazy",
@@ -13,6 +13,7 @@ local M = {
       { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
     },
   },
+  -- 持久化工作区
   {
     "folke/persistence.nvim",
     -- Restore last session of current dir
@@ -25,7 +26,32 @@ local M = {
         pre_save = nil,
       })
     end,
-  } 
+  },
+  -- 语法高亮
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        -- defaults 
+        "vim",
+        "lua",
+
+        -- web dev 
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "tsx",
+        "json",
+
+        -- others
+        "sql",
+        "bash",
+        "ssh_config"
+
+      },
+    },
+  },
 }
 
 return M
