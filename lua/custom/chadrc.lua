@@ -15,7 +15,7 @@ M.options = {
    end,
 }
 
-M.plugins = require "custom.plugins"
+M.plugins = "custom.plugins"
 
 --M.mappings = {
     --misc = function()
