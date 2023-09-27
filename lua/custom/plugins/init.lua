@@ -1,17 +1,31 @@
 local M = {
+  -- 自动安装lsp
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "html-lsp",
+        "prettier",
+        "tsserver",
+        "tailwindcss",
+        "typescript"
+      }
+    }
+  },
+  -- lsp
+  {
+    "neovim/nvim-lspconfig",
+    config = function ()
+      require "plugins.configs.lspconfig"
+      require "custom.plugins.lspconfig"
+    end,
+  },
   -- 快捷移动
   {
     "folke/flash.nvim",
     event = "VeryLazy",
-    --- @type Flash.Config
+    -- @type Flash.Config
     opts = {},
-    keys = {
-      { "s", mode = { "n", "o", "x" }, function() require("flash").jump() end, desc = "Flash" },
-      { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-      { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-      { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-    },
   },
   -- 持久化工作区
   {
@@ -20,6 +34,7 @@ local M = {
     lazy = true,
     event = "BufReadPre", -- this will only start session saving when an actual file was opened
     config = function()
+      -- session 文件存储在~/.config/nvim/session
       require("persistence").setup({
         dir = vim.fn.expand(vim.fn.stdpath("config") .. "/session/"),
         options = { "buffers", "curdir", "tabpages", "winsize" },
