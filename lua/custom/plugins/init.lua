@@ -13,11 +13,15 @@ local M = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        -- webdev
         "html-lsp",
         "prettier",
         "tsserver",
         "tailwindcss",
-        "typescript"
+        "typescript",
+
+        -- others
+        "sqlls",
       }
     }
   },
