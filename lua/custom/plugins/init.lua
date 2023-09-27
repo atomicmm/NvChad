@@ -1,4 +1,12 @@
 local M = {
+  -- codeium with neovim
+  {
+    "Exafunction/codeium.vim",
+    event = "BufEnter",
+    config = function()
+      vim.keymap.set("i", "<C-g>", function() return vim.fn["codeium#Accept"]() end, { expr = true })
+    end
+  },
   -- 自动安装lsp
   {
     "williamboman/mason.nvim",
