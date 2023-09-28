@@ -26,6 +26,7 @@ local M = {
     }
   },
   -- lsp
+  -- pnpm i -g typescript-language-server typescript sql-language-server prettier cspell
   {
     "neovim/nvim-lspconfig",
     dependencies = {
