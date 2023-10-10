@@ -19,6 +19,7 @@ local M = {
         "tsserver",
         "tailwindcss",
         "typescript",
+        "emmet_ls",
 
         -- others
         "sqlls",
