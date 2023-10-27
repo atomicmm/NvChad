@@ -7,3 +7,4 @@ coc-settings.json
 lazy-lock.json
 after
 session
+.DS_Store
