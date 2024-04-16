@@ -6,7 +6,7 @@ local M = {}
 -- example of changing theme:
 
 M.ui = {
-   theme = "chadracula",
+   theme = "bearded-arc",
 }
 
 M.options = {
