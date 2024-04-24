@@ -1,13 +1,13 @@
 local M = {
   -- ai-codeium with neovim
-  {
-    "Exafunction/codeium.vim",
-    event = "BufEnter",
-    config = function()
+  --{
+  --  "Exafunction/codeium.vim",
+  --  event = "BufEnter",
+  --  config = function()
       -- 默认的tab补全会被原生的下拉菜单覆盖，这里改成自定义的Ctrl+G
-      vim.keymap.set("i", "<C-g>", function() return vim.fn["codeium#Accept"]() end, { expr = true })
-    end
-  },
+  --    vim.keymap.set("i", "<C-g>", function() return vim.fn["codeium#Accept"]() end, { expr = true })
+  --  end
+  --},
   -- 自动安装lsp
   {
     "williamboman/mason.nvim",
